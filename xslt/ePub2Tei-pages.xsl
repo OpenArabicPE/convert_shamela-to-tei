@@ -66,7 +66,7 @@
     
     <!-- gaps -->
     <xsl:template match="html:span[@class='red'][text()='...']" priority="2">
-        <gap/>
+        <gap resp="#org_MS"/>
     </xsl:template>
     <xsl:template match="html:span[@class='red']" priority="1">
         <hi style="color:red;">
