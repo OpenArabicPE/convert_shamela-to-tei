@@ -13,7 +13,7 @@
     
     <xd:doc scope="stylesheet">
         <xd:desc>
-            <xd:p>This stylesheet will transform an ePub from shamela.ws to TEI P5</xd:p>
+            <xd:p>This stylesheet splits a large TEI file into smaller TEI files based on some criteria. The original file is already structured into <tei:gi>div</tei:gi>s.</xd:p>
         </xd:desc>
     </xd:doc>
     
