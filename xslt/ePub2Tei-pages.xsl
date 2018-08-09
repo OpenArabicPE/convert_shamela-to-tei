@@ -9,7 +9,7 @@
     xmlns:dc="http://purl.org/dc/elements/1.1/"
     xmlns="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs xd opf dc html tei"
-    version="2.0">
+    version="3.0">
     
     <xd:doc scope="stylesheet">
         <xd:desc>
@@ -26,7 +26,7 @@
     
     <!-- div content per page -->
     <xsl:template match="html:div[@id='book-container']">
-        <!-- pb -->
+        <!-- generate a pb -->
         <xsl:element name="pb">
             <!-- construct an ID from the issue and page numbers provided in human-readible form only -->
             <xsl:attribute name="n">
