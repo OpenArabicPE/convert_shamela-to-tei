@@ -76,6 +76,10 @@
                         <Boolean>true</Boolean>
                     </entry>
                     <entry>
+                        <String>enable.project.master.files.support</String>
+                        <Boolean>true</Boolean>
+                    </entry>
+                    <entry>
                         <String>font.for.author.v12</String>
                         <String>Gentium Plus,0,14</String>
                     </entry>
@@ -130,6 +134,92 @@
                     <entry>
                         <String>scenarios</String>
                         <scenario-array>
+                            <scenario>
+                                <field name="advancedOptionsMap">
+                                    <null/>
+                                </field>
+                                <field name="name">
+                                    <String>1. convert: ePub to TEI</String>
+                                </field>
+                                <field name="baseURL">
+                                    <String></String>
+                                </field>
+                                <field name="footerURL">
+                                    <String></String>
+                                </field>
+                                <field name="fOPMethod">
+                                    <String>pdf</String>
+                                </field>
+                                <field name="fOProcessorName">
+                                    <String>Apache FOP</String>
+                                </field>
+                                <field name="headerURL">
+                                    <String></String>
+                                </field>
+                                <field name="inputXSLURL">
+                                    <String>${pdu}/../convert_shamela-to-tei/xslt/ePub2Tei-opf.xsl</String>
+                                </field>
+                                <field name="inputXMLURL">
+                                    <String>${currentFileURL}</String>
+                                </field>
+                                <field name="defaultScenario">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="isFOPPerforming">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="type">
+                                    <String>XSL</String>
+                                </field>
+                                <field name="saveAs">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="openInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="outputFile">
+                                    <null/>
+                                </field>
+                                <field name="outputResource">
+                                    <null/>
+                                </field>
+                                <field name="openOtherLocationInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="locationToOpenInBrowserURL">
+                                    <null/>
+                                </field>
+                                <field name="openInEditor">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInHTMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInXMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInSVGPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInResultSetPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useXSLTInput">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="xsltParams">
+                                    <list/>
+                                </field>
+                                <field name="cascadingStylesheets">
+                                    <String-array/>
+                                </field>
+                                <field name="xslTransformer">
+                                    <String>Saxon-EE</String>
+                                </field>
+                                <field name="extensionURLs">
+                                    <String-array/>
+                                </field>
+                            </scenario>
                             <scenario>
                                 <field name="advancedOptionsMap">
                                     <null/>
@@ -513,6 +603,149 @@
                                 </field>
                                 <field name="xslTransformer">
                                     <String>Saxon-EE</String>
+                                </field>
+                                <field name="extensionURLs">
+                                    <String-array/>
+                                </field>
+                            </scenario>
+                            <scenario>
+                                <field name="advancedOptionsMap">
+                                    <serializableOrderedMap>
+                                        <entry>
+                                            <String>Saxon-PE</String>
+                                            <xsltSaxonBAdvancedOptions>
+                                                <field name="allowCallsOnExtensionFunctions">
+                                                    <Boolean>true</Boolean>
+                                                </field>
+                                                <field name="registerSaxonCEExtensions">
+                                                    <Boolean>true</Boolean>
+                                                </field>
+                                                <field name="enableAssertions">
+                                                    <Boolean>false</Boolean>
+                                                </field>
+                                                <field name="showVersionWarnings">
+                                                    <Boolean>false</Boolean>
+                                                </field>
+                                                <field name="dtdSourceValidation">
+                                                    <Boolean>false</Boolean>
+                                                </field>
+                                                <field name="dtdSourceValidationRecover">
+                                                    <Boolean>false</Boolean>
+                                                </field>
+                                                <field name="lineNumbering">
+                                                    <Boolean>false</Boolean>
+                                                </field>
+                                                <field name="initialMode">
+                                                    <null/>
+                                                </field>
+                                                <field name="initialTemplate">
+                                                    <null/>
+                                                </field>
+                                                <field name="traceXPathExpression">
+                                                    <Boolean>true</Boolean>
+                                                </field>
+                                                <field name="expandAttributeDefaults">
+                                                    <Boolean>false</Boolean>
+                                                </field>
+                                                <field name="errorRecoverPolicy">
+                                                    <String>saxon.recover.with.warning</String>
+                                                </field>
+                                                <field name="stripWS">
+                                                    <String>saxon.strip.ws.none</String>
+                                                </field>
+                                                <field name="optimizationLevel">
+                                                    <String>0</String>
+                                                </field>
+                                                <field name="useConfigFile">
+                                                    <Boolean>false</Boolean>
+                                                </field>
+                                                <field name="configSystemID">
+                                                    <null/>
+                                                </field>
+                                                <field name="initializer">
+                                                    <String></String>
+                                                </field>
+                                            </xsltSaxonBAdvancedOptions>
+                                        </entry>
+                                    </serializableOrderedMap>
+                                </field>
+                                <field name="name">
+                                    <String>TEI: generate @xml:id</String>
+                                </field>
+                                <field name="baseURL">
+                                    <String></String>
+                                </field>
+                                <field name="footerURL">
+                                    <String></String>
+                                </field>
+                                <field name="fOPMethod">
+                                    <String>pdf</String>
+                                </field>
+                                <field name="fOProcessorName">
+                                    <String>Apache FOP</String>
+                                </field>
+                                <field name="headerURL">
+                                    <String></String>
+                                </field>
+                                <field name="inputXSLURL">
+                                    <String>${pdu}/../tools/xslt/tei_generate-xml-id.xsl</String>
+                                </field>
+                                <field name="inputXMLURL">
+                                    <String>${currentFileURL}</String>
+                                </field>
+                                <field name="defaultScenario">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="isFOPPerforming">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="type">
+                                    <String>XSL</String>
+                                </field>
+                                <field name="saveAs">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="openInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="outputFile">
+                                    <File>${cfd}/_output/xml-id/${cfn}.xml</File>
+                                </field>
+                                <field name="outputResource">
+                                    <String>${cfd}/_output/xml-id/${cfn}.xml</String>
+                                </field>
+                                <field name="openOtherLocationInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="locationToOpenInBrowserURL">
+                                    <null/>
+                                </field>
+                                <field name="openInEditor">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInHTMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInXMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInSVGPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInResultSetPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useXSLTInput">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="xsltParams">
+                                    <list/>
+                                </field>
+                                <field name="cascadingStylesheets">
+                                    <String-array/>
+                                </field>
+                                <field name="xslTransformer">
+                                    <String>Saxon-PE</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -1283,7 +1516,7 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String>1. convert: ePub to TEI</String>
+                                    <String>2. TEI: group sections into &lt;div>s</String>
                                 </field>
                                 <field name="baseURL">
                                     <String></String>
@@ -1301,7 +1534,7 @@
                                     <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String>${pdu}/../convert_shamela-to-tei/xslt/ePub2Tei-opf.xsl</String>
+                                    <String>${pdu}/xslt/tei_group-sections-into-divs.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
                                     <String>${currentFileURL}</String>
@@ -1322,10 +1555,10 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
-                                    <null/>
+                                    <File>${cfd}/_output/div_grouped/${cfne}</File>
                                 </field>
                                 <field name="outputResource">
-                                    <null/>
+                                    <String>${cfd}/_output/div_grouped/${cfne}</String>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
@@ -1366,67 +1599,10 @@
                             </scenario>
                             <scenario>
                                 <field name="advancedOptionsMap">
-                                    <serializableOrderedMap>
-                                        <entry>
-                                            <String>Saxon-PE</String>
-                                            <xsltSaxonBAdvancedOptions>
-                                                <field name="allowCallsOnExtensionFunctions">
-                                                    <Boolean>true</Boolean>
-                                                </field>
-                                                <field name="registerSaxonCEExtensions">
-                                                    <Boolean>true</Boolean>
-                                                </field>
-                                                <field name="enableAssertions">
-                                                    <Boolean>false</Boolean>
-                                                </field>
-                                                <field name="showVersionWarnings">
-                                                    <Boolean>false</Boolean>
-                                                </field>
-                                                <field name="dtdSourceValidation">
-                                                    <Boolean>false</Boolean>
-                                                </field>
-                                                <field name="dtdSourceValidationRecover">
-                                                    <Boolean>false</Boolean>
-                                                </field>
-                                                <field name="lineNumbering">
-                                                    <Boolean>false</Boolean>
-                                                </field>
-                                                <field name="initialMode">
-                                                    <null/>
-                                                </field>
-                                                <field name="initialTemplate">
-                                                    <null/>
-                                                </field>
-                                                <field name="traceXPathExpression">
-                                                    <Boolean>true</Boolean>
-                                                </field>
-                                                <field name="expandAttributeDefaults">
-                                                    <Boolean>false</Boolean>
-                                                </field>
-                                                <field name="errorRecoverPolicy">
-                                                    <String>saxon.recover.with.warning</String>
-                                                </field>
-                                                <field name="stripWS">
-                                                    <String>saxon.strip.ws.none</String>
-                                                </field>
-                                                <field name="optimizationLevel">
-                                                    <String>0</String>
-                                                </field>
-                                                <field name="useConfigFile">
-                                                    <Boolean>false</Boolean>
-                                                </field>
-                                                <field name="configSystemID">
-                                                    <null/>
-                                                </field>
-                                                <field name="initializer">
-                                                    <String></String>
-                                                </field>
-                                            </xsltSaxonBAdvancedOptions>
-                                        </entry>
-                                    </serializableOrderedMap>
+                                    <null/>
                                 </field>
                                 <field name="name">
-                                    <String>TEI: generate @xml:id</String>
+                                    <String>3. TEI: group paragraphs into &lt;p>s</String>
                                 </field>
                                 <field name="baseURL">
                                     <String></String>
@@ -1444,7 +1620,7 @@
                                     <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String>${pdu}/../tools/xslt/tei_generate-xml-id.xsl</String>
+                                    <String>${pdu}/xslt/tei_group-paragraphs-into-p.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
                                     <String>${currentFileURL}</String>
@@ -1465,10 +1641,10 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
-                                    <File>${cfd}/_output/xml-id/${cfn}.xml</File>
+                                    <File>${cfd}/_output/p_grouped/${cfne}</File>
                                 </field>
                                 <field name="outputResource">
-                                    <String>${cfd}/_output/xml-id/${cfn}.xml</String>
+                                    <String>${cfd}/_output/p_grouped/${cfne}</String>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
@@ -1501,7 +1677,7 @@
                                     <String-array/>
                                 </field>
                                 <field name="xslTransformer">
-                                    <String>Saxon-PE</String>
+                                    <String>Saxon-EE</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -1531,5 +1707,6 @@
     </meta>
     <projectTree name="convert_shamela-to-tei.xpr">
         <folder path="xslt/"/>
+        <folder path="../../TEI/oclc_213913824/"/>
     </projectTree>
 </project>
