@@ -63,6 +63,16 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
+
+    <!-- footnotes: the footnote markers are seemingly never marked up, but sometimes the text is wrapped in a span -->
+    <xsl:template match="html:span[@class='footnote']">
+        <xsl:element name="note">
+            <xsl:attribute name="type" select="{@class}"/>
+            <xsl:attribute name="location" select="'bottom'"/>
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+
     
     <!-- gaps -->
     <xsl:template match="html:span[@class='red'][text()='...']" priority="2">
