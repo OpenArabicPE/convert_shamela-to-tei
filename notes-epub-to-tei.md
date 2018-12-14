@@ -11,7 +11,7 @@ date: 2015-08-24
 
 ## example xhtml
 
-~~~ {.xml}
+```html
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -30,11 +30,12 @@ date: 2015-08-24
 <div class="center">الجزء: 37 ¦ الصفحة: 1</div>
 </body>
 </html>
-~~~
+```
 
 
 ## example XSLT 
-~~~ {.xslt}
+
+```xml
 <xsl:template match="html:div[@id='book-container']">
         <!-- pb -->
         <xsl:element name="tei:pb">
@@ -48,7 +49,7 @@ date: 2015-08-24
         </xsl:element>
         <xsl:apply-templates/>
     </xsl:template>
-~~~
+```
 
 # ePub conversion
 
@@ -73,13 +74,13 @@ date: 2015-08-24
     + some entity references are not escaped: `&` instead of `&amp;`
 - where to keep the bibliographic information from the ePub?
 
-~~~{.xml}
+```xml
 <dc:title xmlns="http://www.idpf.org/2007/opf">مجلة المقتبس</dc:title> 
 <dc:creator xmlns="http://www.idpf.org/2007/opf" opf:role="aut">محمد كرد علي</dc:creator> 
 <dc:publisher xmlns="http://www.idpf.org/2007/opf">http://shamela.ws</dc:publisher> 
 <dc:language xmlns="http://www.idpf.org/2007/opf">ar</dc:language> 
 <dc:identifier xmlns="http://www.idpf.org/2007/opf" id="BookID" opf:scheme="UUID">urn:uuid:4caf7b615c3e7278c0cc1fcc2e80c7ec</dc:identifier> 
-~~~
+```
 
 
 
