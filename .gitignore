@@ -1,0 +1,9 @@
+.DS_Store
+_output/
+
+# temporary files
+.Rhistory
+#data/
+data/authors/
+data/authorsArticles/
+#data/test/
