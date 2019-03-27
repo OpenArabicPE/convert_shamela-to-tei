@@ -4,7 +4,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xd:doc scope="stylesheet">
         <xd:desc>
-            <xd:p/>
+            <xd:p>This stylesheets groups sections between <tei:gi>lb</tei:gi> into paragraphs.</xd:p>
         </xd:desc>
     </xd:doc>
     <xsl:output encoding="UTF-8" indent="yes" method="xml" omit-xml-declaration="no"/>
