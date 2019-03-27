@@ -33,7 +33,7 @@ date: 2015-08-24
 ```
 
 
-## example XSLT 
+## example XSLT
 
 ```xml
 <xsl:template match="html:div[@id='book-container']">
@@ -75,11 +75,11 @@ date: 2015-08-24
 - where to keep the bibliographic information from the ePub?
 
 ```xml
-<dc:title xmlns="http://www.idpf.org/2007/opf">مجلة المقتبس</dc:title> 
-<dc:creator xmlns="http://www.idpf.org/2007/opf" opf:role="aut">محمد كرد علي</dc:creator> 
-<dc:publisher xmlns="http://www.idpf.org/2007/opf">http://shamela.ws</dc:publisher> 
-<dc:language xmlns="http://www.idpf.org/2007/opf">ar</dc:language> 
-<dc:identifier xmlns="http://www.idpf.org/2007/opf" id="BookID" opf:scheme="UUID">urn:uuid:4caf7b615c3e7278c0cc1fcc2e80c7ec</dc:identifier> 
+<dc:title xmlns="http://www.idpf.org/2007/opf">مجلة المقتبس</dc:title>
+<dc:creator xmlns="http://www.idpf.org/2007/opf" opf:role="aut">محمد كرد علي</dc:creator>
+<dc:publisher xmlns="http://www.idpf.org/2007/opf">http://shamela.ws</dc:publisher>
+<dc:language xmlns="http://www.idpf.org/2007/opf">ar</dc:language>
+<dc:identifier xmlns="http://www.idpf.org/2007/opf" id="BookID" opf:scheme="UUID">urn:uuid:4caf7b615c3e7278c0cc1fcc2e80c7ec</dc:identifier>
 ```
 
 
@@ -96,10 +96,6 @@ date: 2015-08-24
         2. `<head><bibl><biblScope n="$3" unit="issue">$2$3</biblScope> <date when="$9-$8-$7">$6$7 - $8 - $9</date></bibl></head><p>`
         3. e.g. `<head>العدد 2</head><p> - بتاريخ: 26 - 3 - 1906`
         4. e.g. `<head><bibl><biblScope n="9" unit="issue">العدد 9</biblScope> <date when="1906-10-18">بتاريخ: 18 - 10 - 1906</date></bibl></head><p>`
-    + translate line breaks into paragraphs
-        1. `<lb/>`
-        2. `</p><p>`
-        3. delete all empty parapragphs: `<p>\s*</p>`
 
 - regex for Ḥaqāʾiq
     + split numbers into divs
@@ -116,6 +112,6 @@ date: 2015-08-24
     + provide the closing tags
         * `(</div>)`
         * `</p></div>$1`
-        * 
+        *
     + correct all dates
         * `(when="\d{4}-)(\d{1})(-)(\d{1})`
