@@ -96,11 +96,10 @@ date: 2015-08-24
         2. `<head><bibl><biblScope n="$3" unit="issue">$2$3</biblScope> <date when="$9-$8-$7">$6$7 - $8 - $9</date></bibl></head><p>`
         3. e.g. `<head>العدد 2</head><p> - بتاريخ: 26 - 3 - 1906`
         4. e.g. `<head><bibl><biblScope n="9" unit="issue">العدد 9</biblScope> <date when="1906-10-18">بتاريخ: 18 - 10 - 1906</date></bibl></head><p>`
-
+- regex for marking up placeNames
+    1. `(و|ب|[^\w>])(مصر)([^\w<])`
+    2. `$1<placeName>$2</placeName>$3`
 - regex for Ḥaqāʾiq
-    + split numbers into divs
-        1. `(<head>العدد\s*\d+\s*</head>)`
-        2. `</div><div type="issue">$1`
     + normalisation and mark-up for publication dates
         1. `(<head>)(العدد\s*)(\d+)(\s*</head>\s*<p>)(.+)(بتاريخ:\s*)(\d{1,2})\s\-\s(\d{1,2})\s\-\s(\d{4})`
         2. `<head><bibl><biblScope n="$3" unit="issue">$2$3</biblScope> <date when="$9-$8-$7">$6$7 - $8 - $9</date></bibl></head>`
