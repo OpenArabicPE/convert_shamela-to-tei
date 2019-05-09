@@ -2082,6 +2082,7 @@
     <projectTree name="convert_shamela-to-tei.xpr">
         <folder path="xslt/"/>
         <folder path="../journal_lughat-al-arab/"/>
+        <folder path="../../TEI/oclc_1040942001/"/>
         <folder path="../../TEI/oclc_165855925/"/>
         <folder path="../../TEI/oclc_213913824/"/>
     </projectTree>
