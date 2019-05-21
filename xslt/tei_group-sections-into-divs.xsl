@@ -5,7 +5,7 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xd:doc scope="stylesheet">
         <xd:desc>
-            <xd:p></xd:p>
+            <xd:p>This stylesheet groups sections into divs along heads</xd:p>
         </xd:desc>
     </xd:doc>
     <xsl:output encoding="UTF-8" indent="yes" method="xml" omit-xml-declaration="no"/>
