@@ -2193,6 +2193,7 @@
         <folder path="../journal_al-ustadh/"/>
         <folder path="../journal_al-zuhur/"/>
         <folder path="../journal_lughat-al-arab/"/>
+        <folder path="../../TEI/oclc_1040942001/"/>
         <folder path="../../TEI/oclc_165855925/"/>
         <folder path="../../TEI/oclc_213913824/"/>
     </projectTree>
