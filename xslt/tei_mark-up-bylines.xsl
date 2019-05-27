@@ -18,7 +18,7 @@
     </xsl:template>
     
     <!-- find the last <p> in a div and check if it is below a maximum length -->
-    <xsl:template match="tei:div[@type='item']/tei:p[not(following-sibling::*)][string-length(.) lt 60]">
+    <xsl:template match="tei:div[@type='item']/tei:p[not(following-sibling::*)][string-length(.) lt 40]">
         <xsl:element name="byline">
             <xsl:apply-templates select="@*"/>
             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
@@ -28,7 +28,7 @@
     <!-- document changes -->
     <xsl:template match="tei:revisionDesc">
         <xsl:copy>
-            <change when="{format-date( current-date(),'[Y0001]-[M01]-[D01]')}" who="{concat('#',$p_id-editor)}" xml:id="{$p_id-change}">Marked final <tei:gi>p</tei:gi>s inside <tei:gi>div</tei:gi>s as bylines (<tei:gi>byline</tei:gi>) if they did not exceed a string length of 60.</change>
+            <change when="{format-date( current-date(),'[Y0001]-[M01]-[D01]')}" who="{concat('#',$p_id-editor)}" xml:id="{$p_id-change}" xml:lang="en">Marked final <tei:gi>p</tei:gi>s inside <tei:gi>div</tei:gi>s as bylines (<tei:gi>byline</tei:gi>) if they did not exceed a string length of 60.</change>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>

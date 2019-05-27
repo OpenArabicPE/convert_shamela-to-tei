@@ -14,7 +14,7 @@
     </xd:desc>
     </xd:doc>
     
-   <xsl:output encoding="UTF-8" indent="yes" method="xml" omit-xml-declaration="no"/>
+   <xsl:output encoding="UTF-8" indent="no" method="xml" omit-xml-declaration="no"/>
     <!-- provides some global parameters -->
     <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
 
@@ -33,6 +33,7 @@
         <xsl:element name="pb">
             <xsl:attribute name="change" select="concat('#',$p_id-change)"/>
             <xsl:attribute name="ed" select="'print'"/>
+            <xsl:attribute name="edRef" select="'#edition_1'"/>
             <xsl:attribute name="n" select="replace(@n,'n\d-p(\d+)$','$1')"/>
         </xsl:element>
     </xsl:template>
