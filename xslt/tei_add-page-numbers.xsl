@@ -28,7 +28,7 @@
     
     <xsl:template match="tei:sourceDesc/tei:biblStruct//tei:biblScope[@unit='page']">
         <xsl:variable name="v_page-first" select="ancestor::tei:TEI/tei:text/descendant::tei:pb[@ed='print'][1]/@n"/>
-    <xsl:variable name="v_page-last" select="ancestor::tei:TEI/tei:text/descendant::tei:pb[@ed='print'][last()]/@n -1"/>
+    <xsl:variable name="v_page-last" select="ancestor::tei:TEI/tei:text/descendant::tei:pb[@ed='print'][last()]/@n"/>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:attribute name="change" select="concat('#',$p_id-change)"/>
