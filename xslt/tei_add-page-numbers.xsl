@@ -25,8 +25,22 @@
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
+    <xsl:template match="tei:sourceDesc/tei:biblStruct/tei:monogr[not(tei:biblScope[@unit='page'])]">
+        <xsl:copy>
+            <xsl:apply-templates select="@* |node()"/>
+             <xsl:variable name="v_page-first" select="ancestor::tei:TEI/tei:text/descendant::tei:pb[@ed='print'][1]/@n"/>
+    <xsl:variable name="v_page-last" select="ancestor::tei:TEI/tei:text/descendant::tei:pb[@ed='print'][last()]/@n"/>
+        <xsl:element name="tei:biblScope">
+            <xsl:attribute name="unit" select="'page'"/>
+            <xsl:attribute name="change" select="concat('#',$p_id-change)"/>
+            <xsl:attribute name="from" select="$v_page-first"/>
+            <xsl:attribute name="to" select="$v_page-last"/>
+            <xsl:value-of select="concat($v_page-first,'-',$v_page-last)"/>
+        </xsl:element>
+        </xsl:copy>
+    </xsl:template>
     
-    <xsl:template match="tei:sourceDesc/tei:biblStruct//tei:biblScope[@unit='page']">
+    <xsl:template match="tei:sourceDesc/tei:biblStruct/tei:monogr/tei:biblScope[@unit='page']">
         <xsl:variable name="v_page-first" select="ancestor::tei:TEI/tei:text/descendant::tei:pb[@ed='print'][1]/@n"/>
     <xsl:variable name="v_page-last" select="ancestor::tei:TEI/tei:text/descendant::tei:pb[@ed='print'][last()]/@n"/>
         <xsl:copy>
@@ -42,7 +56,7 @@
     <!-- document changes -->
     <xsl:template match="tei:revisionDesc">
         <xsl:copy>
-            <change when="{format-date( current-date(),'[Y0001]-[M01]-[D01]')}" who="{concat('#',$p_id-editor)}" xml:id="{$p_id-change}">Page numbers to bibliographic description of the source based on the file's content.</change>
+            <change when="{format-date( current-date(),'[Y0001]-[M01]-[D01]')}" who="{concat('#',$p_id-editor)}" xml:id="{$p_id-change}" xml:lang="en">Page numbers to bibliographic description of the source based on the file's content.</change>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>

@@ -28,31 +28,35 @@
     </xsl:template>
     
     <xsl:variable name="v_issue" select="tei:TEI/tei:text/tei:body/tei:div[1]/tei:head/tei:num/@value"/>
-    <xsl:variable name="v_date-publication" select="tei:TEI/tei:text/tei:body/tei:div[1]/tei:dateline/tei:date/@when"/>
+    <xsl:variable name="v_date-publication" select="tei:TEI/tei:text/tei:body/tei:div[1]/descendant::tei:date/@when"/>
+    
+    <xsl:template match="tei:sourceDesc/tei:biblStruct/tei:monogr/tei:biblScope[@unit='issue']">
+        <xsl:copy>
+                    <xsl:attribute name="change" select="concat('#',$p_id-change)"/>
+                <xsl:attribute name="unit" select="'issue'"/>
+                <xsl:attribute name="from" select="$v_issue"/>
+                <xsl:attribute name="to" select="$v_issue"/>
+                <xsl:value-of select="$v_issue"/>
+        </xsl:copy>
+    </xsl:template>
     
     <xsl:template match="tei:sourceDesc/tei:biblStruct/tei:monogr">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates/>
             <!-- add empty biblScope for volume information -->
-            <xsl:element  name="biblScope">
-                <xsl:attribute name="unit" select="'volume'"/>
-                <xsl:attribute name="from" select="''"/>
-                <xsl:attribute name="to" select="''"/>
-            </xsl:element>
+            <xsl:choose>
+                <xsl:when test="not(tei:biblScope[@unit='issue'])">
             <!-- add issue numbers -->
             <xsl:element  name="biblScope">
+                <xsl:attribute name="change" select="concat('#',$p_id-change)"/>
                 <xsl:attribute name="unit" select="'issue'"/>
                 <xsl:attribute name="from" select="$v_issue"/>
                 <xsl:attribute name="to" select="$v_issue"/>
                 <xsl:value-of select="$v_issue"/>
             </xsl:element>
-            <!-- add empty biblScope for page information -->
-            <xsl:element  name="biblScope">
-                <xsl:attribute name="unit" select="'page'"/>
-                <xsl:attribute name="from" select="''"/>
-                <xsl:attribute name="to" select="''"/>
-            </xsl:element>
+                </xsl:when>
+            </xsl:choose>
         </xsl:copy>
     </xsl:template>
     
