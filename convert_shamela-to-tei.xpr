@@ -131,21 +131,6 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>xslt/tei_mark-up-bylines.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>7. mark-up: convert short final paragraphs into bylines</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XSL</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
                                     <String>xslt/ePub2Tei-opf.xsl</String>
                                 </field>
                                 <field name="scenarioIds">
@@ -754,7 +739,29 @@
                                     <Boolean>true</Boolean>
                                 </field>
                                 <field name="xsltParams">
-                                    <list/>
+                                    <list>
+                                        <transformationParameter>
+                                            <field name="paramDescription">
+                                                <paramDescriptor>
+                                                    <field name="localName">
+                                                        <String>p_verbose</String>
+                                                    </field>
+                                                    <field name="prefix">
+                                                        <null/>
+                                                    </field>
+                                                    <field name="namespace">
+                                                        <null/>
+                                                    </field>
+                                                </paramDescriptor>
+                                            </field>
+                                            <field name="value">
+                                                <String>true()</String>
+                                            </field>
+                                            <field name="hasXPathValue">
+                                                <Boolean>true</Boolean>
+                                            </field>
+                                        </transformationParameter>
+                                    </list>
                                 </field>
                                 <field name="cascadingStylesheets">
                                     <String-array/>
