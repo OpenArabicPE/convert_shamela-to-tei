@@ -106,11 +106,7 @@
     <!-- find the first line in a line group -->
     <xsl:template match="tei:l[@type = 'bayt']" mode="m_process">
         <xsl:choose>
-            <xsl:when test="following-sibling::node()[1] = tei:l[@type = 'bayt']">
-                <xsl:message>
-                    <xsl:text>l followed by an l</xsl:text>
-                </xsl:message>
-            </xsl:when>
+            <!-- test for the first <l> in an <lg> -->
             <xsl:when test="(preceding-sibling::node()[1] != self::tei:l[@type = 'bayt']) and (following-sibling::node()[1] = self::tei:l[@type = 'bayt'])">
                 <xsl:message>
                     <xsl:text>found first l in an lg</xsl:text>
@@ -125,6 +121,12 @@
                         </xsl:copy>
                     </xsl:for-each>
                 </lg>
+            </xsl:when>
+            <!-- test for subsequent <l>s -->
+            <xsl:when test="following-sibling::node()[1] = tei:l[@type = 'bayt']">
+                <xsl:message>
+                    <xsl:text>l followed by an l</xsl:text>
+                </xsl:message>
             </xsl:when>
             <xsl:otherwise>
                 <lg change="{concat('#',$p_id-change)}">
